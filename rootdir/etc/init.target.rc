@@ -49,6 +49,9 @@ on boot
     write /sys/devices/i2c-3/3-0024/cyttsp_update_fw 1
     write /sys/devices/i2c-3/3-005b/update_fw 1
     start qcamerasvr
+    
+    # enable pulsing led on boot
+    write /sys/class/sec/led/led_pattern 6
 
 on post-fs-data
     mkdir /data/tombstones 0771 system system
@@ -328,6 +331,7 @@ service bugreport /system/bin/dumpstate -d -p -B \
 # SISO-ANDR-PERF :: START Changing scheduler to row after boot complete
 on property:sys.boot_completed=1
     write /sys/block/mmcblk0/queue/scheduler row
+    write /sys/class/sec/led/led_pattern 0
 
 # insthk
 service insthk /system/bin/insthk
