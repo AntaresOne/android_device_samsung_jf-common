@@ -46,7 +46,7 @@
              android:allowMassStorage="true" />
 	     
     <storage android:mountPoint="/storage/sdcard2"
-             android:storageDescription="@string/storage_sd_card"
+             android:storageDescription="@string/storage_sd_card2"
              android:primary="false"
              android:removable="false"
              android:allowMassStorage="true" />
