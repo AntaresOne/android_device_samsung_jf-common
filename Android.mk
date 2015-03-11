@@ -22,7 +22,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter jactivelte jflte,$(TARGET_DEVICE)),)
+ifneq ($(filter jflte,$(TARGET_DEVICE)),)
 
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 
